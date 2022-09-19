@@ -82,7 +82,7 @@ we chose 100 in denominator since we ran a `3x3` kernel and maximum difference i
 
 The idea is that the steeper the slope, the higher the chance our agent will fall. I chose an exponential function with the power of 10 for this. You can see after the slope of `60` percent that the chance of falling down increases immensely
 
-![Probablity](https://github.com/moienr/DEM_Path_finding/blob/65ada022d4df86494b1fe88ea1b3a3a844a0bee7/imgs/slipping%20func.png)
+![Probablity](https://github.com/moienr/DEM_Path_finding/blob/a1097bd9f59cfc25e042970114ece5d14980fe46/imgs/slipping%203func.png)
 
 The aspect comes in if the agent falls; if the aspect is, for example, towards the south, and the agent decides to go right, but he falls, he will fall into the northern pixel.
 
@@ -91,7 +91,28 @@ The aspect comes in if the agent falls; if the aspect is, for example, towards t
 
 The edge pixels are dead zones, and has a reward of `-100`
 
+#### Final and Checkpoints
 
+The summit and our two Resting points has a `rewarad` of `+100` 
 
-# Resualts
+# Results
 
+## Ground Truth
+
+For the ground truth, I created a line feature using Arcgis from the Google Base Map, then converted it into a raster.
+
+![gt](https://github.com/moienr/DEM_Path_finding/blob/a1097bd9f59cfc25e042970114ece5d14980fe46/imgs/path.png)
+
+## Results compared to GT
+The intersection of ground truth and the final results were used to show the matching paths.
+
+![res1](https://github.com/moienr/DEM_Path_finding/blob/a1097bd9f59cfc25e042970114ece5d14980fe46/imgs/res_1.png)
+
+## Results compared to Buffed GT
+I buffed the ground truth line by 5 pixels to better show how close our results and the ground truth are.
+
+![res2](https://github.com/moienr/DEM_Path_finding/blob/a1097bd9f59cfc25e042970114ece5d14980fe46/imgs/res_2.png)
+
+# Concoultion
+
+To be honest, I didn't expect such good results as I was using SRTM 30m DEM and no other complimentry data like snow and rain data. Hopefully, with a higher resolution DEM and more complex inputs, this algorithm is a *small step for a man* :))
