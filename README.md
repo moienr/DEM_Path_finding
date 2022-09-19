@@ -28,7 +28,7 @@ What I wanted to try in this project was to achieve an unsupervised method to fi
 ![Slope_Aspect](https://github.com/moienr/DEM_Path_finding/blob/c1b8a516921a03c699f95878fbc8dfbcaad39fc6/imgs/slope_ascpet.png)
 
 
-# Q-Learning
+## Q-Learning
 There are a ton of youtube videos explaining this Algorithm, so I'm not translating my project description to here :))
 
 But here is the Sudo:
@@ -56,6 +56,8 @@ The Agent can go Up-Down-Left-Right
 
 ### Environment
 
+#### Action Reward
+
 * Every move has a punishment unless otherwise.
 * We calclulate the `reward` for each action, based on its `neighboring cells`:
 
@@ -73,4 +75,23 @@ $$
 
 Notice the denominator, going down the hill has ten times more punishment than going uphill; we want our agent to ascend unless it is necessary
 
-we chose 100 in denominator since we ran a `3x3` kernel and maximum difference in elevation between two adjacent pixels were 99.0
+we chose 100 in denominator since we ran a `3x3` kernel and maximum difference in elevation between two adjacent pixels were 99.0, so the punishment is somthing betwen `0` and `-1`
+
+
+#### Slippery slope
+
+The idea is that the steeper the slope, the higher the chance our agent will fall. I chose an exponential function with the power of 10 for this. You can see after the slope of `60` percent that the chance of falling down increases immensely
+
+![Probablity](https://github.com/moienr/DEM_Path_finding/blob/65ada022d4df86494b1fe88ea1b3a3a844a0bee7/imgs/slipping%20func.png)
+
+The aspect comes in if the agent falls; if the aspect is, for example, towards the south, and the agent decides to go right, but he falls, he will fall into the northern pixel.
+
+
+#### Edges
+
+The edge pixels are dead zones, and has a reward of `-100`
+
+
+
+# Resualts
+
