@@ -1,4 +1,4 @@
-# Reinforcement Learning Path finding for **Mountain Climbing Route** Utilizing Digital Elevation Model (DEM)
+# Reinforcement Learning Path finding: **Mountain Climbing Route** Utilizing Digital Elevation Model (DEM)
 
 Class Project of *Advanced GIS - Dr. Jelokhani*.
 
