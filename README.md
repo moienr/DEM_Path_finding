@@ -1,4 +1,4 @@
-# Reinforcement Learning Path finding: **Mountain Climbing Route,** From Digital Elevation Model (DEM)
+# Reinforcement Learning (Q-Learning) Path finding: **Mountain Climbing Route,** From Digital Elevation Model (DEM)
 
 
 by: Moien Rangzan and Matineh Rangzan
