@@ -1,8 +1,7 @@
 # Reinforcement Learning Path finding: **Mountain Climbing Route,** From Digital Elevation Model (DEM)
 
-Class Project of *Advanced GIS - Dr. Jelokhani*.
 
-by: Moien Rangzan
+by: Moien Rangzan and Matineh Rangzan
 
 ---
 
